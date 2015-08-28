@@ -1,22 +1,17 @@
 var React = require('react');
-var DefaultH1 = require('pui-react-typography').DefaultH1;
-var PrimaryButton = require('pui-react-buttons').PrimaryButton;
+var SimpleTabs = require('pui-react-tabs').SimpleTabs;
+var Tab = require('pui-react-tabs').Tab;
 
 var MyTestPage = React.createClass({
- getInitialState: function() {
-   return {showMessage: false};
- },
-
- showMessage: function() {
-   this.setState({showMessage: true});
- },
-
  render: function() {
    return (
-     <div className="container">
-   <PrimaryButton onClick={this.showMessage}>Show Message</PrimaryButton>
-   { this.state.showMessage ? <DefaultH1>Hello world!</DefaultH1> : null }
- </div>
+    <SimpleTabs defaultActiveKey={1}>
+      <Tab eventKey={1} title="Tab 1">Wow!</Tab>
+      <Tab eventKey={2} title="Tab 2">
+        <h2>Neat!</h2>
+        <span>So much content.</span>
+      </Tab>
+    </SimpleTabs>
    );
  }
 });
