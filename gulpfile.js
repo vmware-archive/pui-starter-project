@@ -11,10 +11,6 @@ gulp.task('default', function() {
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          loader: 'babel-loader?stage=0&optional[]=runtime&loose=true'
-        },
-        {
-          test: /bootstrap/,
           loader: 'babel-loader?stage=0&optional[]=runtime&loose=true&nonStandard=true'
         }
       ],
