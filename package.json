@@ -1,10 +1,11 @@
 {
-  "name": "tabs-need-fixing",
-  "version": "1.0.0",
-  "description": "A project to test out why tabs aren't working in isolation",
+  "name": "pui-demo-project",
+  "version": "0.0.1",
+  "description": "A blank slate for playing with or accepting pui components",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp build",
+    "serve": "gulp"
   },
   "author": "",
   "license": "ISC",
@@ -13,16 +14,21 @@
     "babel-loader": "^5.3.2",
     "dr-frankenstyle": "^0.2.4",
     "gulp": "^3.9.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-load-plugins": "^0.10.0",
     "gulp-rename": "^1.2.2",
-    "gulp-webpack": "^1.5.0",
     "imports-loader": "^0.6.4",
     "react": "^0.13.3",
-    "webpack": "^1.12.0"
+    "webpack": "^1.12.0",
+    "webpack-stream": "^2.1.0"
   },
-  "dependencies": {
-    "pui-react-tabs": "^2.0.0"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "^0.13.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pivotal-cf/pui-demo-project.git"
+  },
+  "homepage": "https://github.com/pivotal-cf/pivotal-ui"
 }

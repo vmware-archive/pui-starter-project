@@ -1,19 +1,17 @@
 var React = require('react');
-var SimpleTabs = require('pui-react-tabs').SimpleTabs;
-var Tab = require('pui-react-tabs').Tab;
+// Required modules here like so:
+// var DefaultButton = require('pui-react-buttons').DefaultButton;
+
 
 var MyTestPage = React.createClass({
- render: function() {
-   return (
-    <SimpleTabs defaultActiveKey={1}>
-      <Tab eventKey={1} title="Tab 1">Wow!</Tab>
-      <Tab eventKey={2} title="Tab 2">
-        <h2>Neat!</h2>
-        <span>So much content.</span>
-      </Tab>
-    </SimpleTabs>
-   );
- }
+  render: function() {
+    return (
+      // Put your react components here, like so:
+      // <DefaultButton>
+      //   I'm a button to click!
+      // </DefaultButton>
+    );
+  }
 });
 
 React.render(<MyTestPage />, document.getElementById('root'));
