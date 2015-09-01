@@ -1,4 +1,8 @@
 var React = require('react');
+// Bootstrap Javascript is required for some PUI CSS components, such as accordians, collapse, dropdowns,
+// modals, and tooltips
+// require('bootstrap');
+
 // Required modules here like so:
 // var DefaultButton = require('pui-react-buttons').DefaultButton;
 
