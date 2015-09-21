@@ -3,6 +3,7 @@ var rename = require('gulp-rename');
 var webpack = require('webpack-stream');
 var drF = require('dr-frankenstyle');
 var loadPlugins = require('gulp-load-plugins');
+var sass = require('gulp-sass');
 
 const plugins = loadPlugins();
 connect = require('gulp-connect');
@@ -36,9 +37,10 @@ gulp.task('build-js', function() {
 gulp.task('setup-watchers', function(callback) {
   process.env.WEBPACK_WATCH = true;
   gulp.watch(['js/**/*.js'], ['build-js']);
+  gulp.watch('./css/**/*.scss', ['sass']);
   callback();
 });
-gulp.task('webserver', ['build-css', 'build-js'], function() {
+gulp.task('webserver', ['build-css', 'build-js', 'sass'], function() {
  connect.server();
 });
 
@@ -73,4 +75,10 @@ gulp.task('jasmine', function() {
     }))
     .pipe(plugins.jasmineBrowser.specRunner())
     .pipe(plugins.jasmineBrowser.server(plugin.whenReady));
+});
+
+gulp.task('sass', function () {
+  gulp.src('./css/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./dist'));
 });
