@@ -7,4 +7,6 @@ To build CSS and JavaScript, and serve on port 8080, run `gulp`. No need to run 
 
 To quickly clean up a project (for example to test a different component in isolation), `npm run clean`.
 
-To install edge pui packages running on a Sinopia server per [the acceptance docs](https://github.com/pivotal-cf/pivotal-ui/blob/master/CORE_TEAM_DOCS.md#acceptance), `npm run si [package name]` will install the package. (This actually runs `npm install --save --registry http://localhost:4873` but is faster and easier to remember).
+To install edge pui packages running on a Sinopia server per [the acceptance docs](https://github.com/pivotal-cf/pivotal-ui/blob/master/CORE_TEAM_DOCS.md#acceptance), `npm run si [package name]` will install the package. (This actually runs `npm install --save --registry http://localhost:4873` but is faster to type and easier to remember).
+
+The sample project is set up to run jasmine tests in the spec folder, with suffix of `_spec.js` with `gulp jasmine`.
