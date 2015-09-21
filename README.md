@@ -1,7 +1,7 @@
 # pui-starter-project
 A blank slate for playing with or accepting pui components
 
-You can put react components in myComponents.js and css components in index.html to try them out. You need to install the appropriate packages, either the released versions (follow the [styleguide instructions](http://styleguide-staging.cfapps.io/)) or the [bleeding edge versions found here](https://github.com/pivotal-cf/pivotal-ui/blob/master/CORE_TEAM_DOCS.md#acceptance).
+You can put react components in js/myComponents.js and css components in index.html to try them out. You need to install the appropriate packages, either the released versions (follow the [styleguide instructions](http://styleguide-staging.cfapps.io/)) or the [bleeding edge versions found here](https://github.com/pivotal-cf/pivotal-ui/blob/master/CORE_TEAM_DOCS.md#acceptance).
 
 To build CSS and JavaScript, and serve on port 8080, run `gulp`. No need to run dr-frankenstyle first!
 
