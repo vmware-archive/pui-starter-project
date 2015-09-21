@@ -19,11 +19,11 @@ var Card = React.createClass({
 var Grid = React.createClass({
   render() {
     let rows = [];
-    //for (let i = 0; i < this.props.children.length; i += this.props.itemsPerRow) {
-    //  rows.push(this.props.children.slice(i, i + this.props.itemsPerRow));
-    //}
+    for (let i = 0; i < this.props.children.length; i += this.props.itemsPerRow) {
+      rows.push(this.props.children.slice(i, i + this.props.itemsPerRow));
+    }
 
-    rows.push(this.props.children);
+    //rows.push(this.props.children);
 
     const wrappedRows = rows.map((row) => {
       return (
