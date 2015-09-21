@@ -1,0 +1,35 @@
+.grid .item {
+    padding: 10px;
+}
+
+.grid.grid-2 .item {
+    width: 50%;
+}
+
+.grid.grid-3 .item {
+    width: 33%;
+}
+
+.grid.grid-4 .item {
+    width: 25%;
+}
+
+.gridRow {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.grid .item {
+
+}
+
+.card {
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+}
+
+.somebodyDidThis {
+    border: 1px dashed maroon;
+    height: 150px;
+}
