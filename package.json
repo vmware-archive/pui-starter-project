@@ -34,7 +34,9 @@
     "webpack": "^1.12.0",
     "webpack-stream": "^2.1.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "pui-css-variables-and-mixins": "^1.10.0"
+  },
   "peerDependencies": {
     "react": "^0.13.3"
   },

@@ -1,0 +1,52 @@
+@import "../node_modules/pui-css-variables-and-mixins/pui-variables";
+@import '../node_modules/pui-css-variables-and-mixins/mixins';
+
+.tile-layout {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.tile-layout .tile-item {
+  display: flex;
+  box-sizing: border-box;
+}
+
+$breakpoints: (xs, 0),
+        (sm, $screen-sm-min),
+        (md, $screen-md-min),
+        (lg, $screen-lg-min),
+        (xl, $screen-xl-min);
+
+@each $breakpoint-name, $breakpoint-variable in $breakpoints {
+  @media only screen and (min-width: $breakpoint-variable) {
+    @for $i from 1 to 13 {
+
+      .tile-layout.grid-#{$breakpoint-name}-#{$i} {
+        .tile-item {
+          width: 100% / $i;
+        }
+
+        &.gutter-md .tile-item {
+          &:nth-child(n) {
+            padding: $grid-gutter-width / 2;
+          }
+
+          &:nth-child(#{$i}n) {
+            padding-right: 0;
+          }
+
+          &:nth-child(#{$i}n + 1) {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.card {
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid gainsboro;
+  width: 100%
+}
