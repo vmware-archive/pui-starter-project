@@ -1,12 +1,30 @@
-# pui-starter-project
-A blank slate for playing with or accepting pui components
+# Pivotal UI Starter Project
 
-You can put react components in js/myComponents.js and css components in index.html to try them out. You need to install the appropriate packages, either the released versions (follow the [styleguide instructions](http://styleguide-staging.cfapps.io/)) or the [bleeding edge versions found here](https://github.com/pivotal-cf/pivotal-ui/blob/master/CORE_TEAM_DOCS.md#acceptance).
+A blank slate for playing with or prototyping [PUI components.](http://styleguide.pivotal.io)
 
-To build CSS and JavaScript, and serve on port 8080, run `gulp`. No need to run dr-frankenstyle first!
+What does this do for me?
+It's a self-contained project that has the React and CSS pipeline already setup. Drop in various React components and easily see how they look.
 
-To quickly clean up a project (for example to test a different component in isolation), `npm run clean`.
+How to use:
+**Quick Overview**
+1. Download project
+1. Run `npm install`
+1. Paste styleguide elements into myComponents.js
+1. Run gulp to start the server
+1. See your changes at [http://localhost:8080](http://localhost:8080)
 
-To install edge pui packages running on a Sinopia server per [the acceptance docs](https://github.com/pivotal-cf/pivotal-ui/blob/master/CORE_TEAM_DOCS.md#acceptance), `npm run si [package name]` will install the package. (This actually runs `npm install --save --registry http://localhost:4873` but is faster to type and easier to remember).
+**Detailed Overview
+- Download project (see .ZIP file on the right hand side)
+- Unzip, switch to that directory and get the latest npm packages 
+`npm install`
+- Grab a [styleguide element](http://styleguide.cfapps.io/react.html#dropdown_react) that you want to play with 
+`npm 'npm install pui-react-dropdowns --save'`
 
-The sample project is set up to run jasmine tests in the spec folder, with suffix of `_spec.js` with `gulp jasmine`.
+- Paste the [styleguide code example](http://styleguide.cfapps.io/react.html#dropdown_react) into myComponents.js . That file is where all your React code resides.
+- Run `gulp` to start the server on [http://localhost:8080](http://localhost:8080). This runs Dr-Frankenstyle for you.
+
+- To clean up your project: `npm run clean`.
+
+# Internal Team Only:
+
+To install edge PUI packages running on a Sinopia server per [the acceptance docs](https://github.com/pivotal-cf/pivotal-ui/blob/master/CORE_TEAM_DOCS.md#acceptance), `npm run si [package name]` will install the package. (This actually runs `npm install --save --registry http://localhost:4873` but is faster and easier to remember).
