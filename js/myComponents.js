@@ -15,7 +15,7 @@ var MyTestPage = React.createClass({
       //   I'm a button to click!
       // </DefaultButton>
       <p> Your react components will render here! </p>
-    )
+    );
   }
 });
 

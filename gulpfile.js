@@ -21,14 +21,14 @@ gulp.task('build-js', function() {
        {
          test: /\.js$/,
          exclude: /node_modules/,
-         loader: 'babel-loader?stage=0&optional[]=runtime&loose=true&nonStandard=true'
+         loader: 'babel-loader'
        },
        {
         test: /bootstrap/,
         loader: 'imports?jQuery=jquery'
       }
-     ],
-   },
+     ]
+   }
  }))
  .pipe(rename('myComponents.js'))
  .pipe(gulp.dest('dist/'));
@@ -66,7 +66,7 @@ gulp.task('jasmine', function() {
           {
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'babel-loader?stage=0&optional[]=runtime&loose=true'
+            loader: 'babel-loader'
           }
         ]
       },
