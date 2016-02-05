@@ -3,7 +3,9 @@
 A blank slate for playing with or prototyping [PUI components.](http://styleguide.pivotal.io)
 
 What does this do for me?
-It's a self-contained project that has the React and CSS pipeline already setup. Drop in various React components and easily see how they look.
+It's a self-contained project that has the React and Pivotal UI CSS pipeline already setup. Drop in various Pivotal UI React components and easily see how they look.
+
+If you want to start a fully operational React application (but can live without automatic building of Pivotal UI CSS) check out our [React Starter](https://github.com/pivotal-cf/react-starter)
 
 ## How to use:
 
