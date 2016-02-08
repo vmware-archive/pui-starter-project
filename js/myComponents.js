@@ -1,4 +1,6 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
+
 // Bootstrap Javascript is required for some PUI CSS components, such as accordians, collapse, dropdowns,
 // modals, and tooltips
 // require('bootstrap');
@@ -19,4 +21,4 @@ var MyTestPage = React.createClass({
   }
 });
 
-React.render(<MyTestPage />, document.getElementById('root'));
+ReactDOM.render(<MyTestPage />, document.getElementById('root'));
