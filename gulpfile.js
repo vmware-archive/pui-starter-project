@@ -1,47 +1,47 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename');
 var webpack = require('webpack-stream');
-var drF = require('dr-frankenstyle');
 var loadPlugins = require('gulp-load-plugins');
 var sass = require('gulp-sass');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const plugins = loadPlugins();
 connect = require('gulp-connect');
 
-gulp.task('build-css', function() {
-  return drF()
-    .pipe(gulp.dest('build/'));
-});
-
 gulp.task('build-js', function() {
- return gulp.src('js/myComponents.js')
-   .pipe(webpack({
-   module: {
-     loaders: [
-       {
-         test: /\.js$/,
-         exclude: /node_modules/,
-         loader: 'babel-loader'
-       },
-       {
-        test: /bootstrap/,
-        loader: 'imports?jQuery=jquery'
+  return gulp.src('js/myComponents.js')
+    .pipe(webpack({
+      module: {
+        loaders: [
+          {
+            test: [/\.svg(\?|$)/, /\.png(\?|$)/, /\.eot(\?|$)/, /\.ttf(\?|$)/, /\.woff2?(\?|$)/, /\.jpg?(\?|$)/],
+            loader: 'url?name=[name].[ext]'
+          },
+          {test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader')},
+          {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+          {test: /bootstrap/, loader: 'imports?jQuery=jquery'}
+        ]
+      },
+      plugins: [
+        new ExtractTextPlugin('components.css', {
+          allChunks: true
+        })
+      ],
+      output: {
+        filename: 'myComponents.js'
       }
-     ]
-   }
- }))
- .pipe(rename('myComponents.js'))
- .pipe(gulp.dest('dist/'));
+    }))
+    .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('setup-watchers', function(callback) {
   process.env.WEBPACK_WATCH = true;
   gulp.watch(['js/**/*.js'], ['build-js']);
-  gulp.watch('./css/**/*.scss', ['sass']);
+  gulp.watch('./css/**/*.scss', ['build-sass']);
   callback();
 });
-gulp.task('webserver', ['build-css', 'build-js', 'sass'], function() {
- connect.server();
+gulp.task('webserver', ['build-js', 'build-sass'], function() {
+  connect.server();
 });
 
 gulp.task('default', ['setup-watchers', 'webserver']);
@@ -70,14 +70,14 @@ gulp.task('jasmine', function() {
           }
         ]
       },
-      output: {filename: 'spec.js' },
+      output: {filename: 'spec.js'},
       plugins: [plugin]
     }))
     .pipe(plugins.jasmineBrowser.specRunner())
     .pipe(plugins.jasmineBrowser.server(plugin.whenReady));
 });
 
-gulp.task('sass', function () {
+gulp.task('build-sass', function() {
   gulp.src('./css/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./dist'));

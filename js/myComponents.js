@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+const Banner = require('pui-react-ribbons').Banner;
 
 // Bootstrap Javascript is required for some PUI CSS components, such as accordians, collapse, dropdowns,
 // modals, and tooltips
@@ -16,7 +17,8 @@ var MyTestPage = React.createClass({
       // <DefaultButton>
       //   I'm a button to click!
       // </DefaultButton>
-      <p> Your react components will render here! </p>
+
+    <Banner>Your React Components Go Here</Banner>
     );
   }
 });
