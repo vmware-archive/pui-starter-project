@@ -14,7 +14,7 @@ If you want to start a fully operational React application (but can live without
 1. Download project
 1. Run `npm install`
 1. Paste styleguide elements into myComponents.js
-1. Run `gulp` to start the server
+1. Run `npm run serve` to start the server
 1. See your changes at [http://localhost:8080](http://localhost:8080)
 
 ### Detailed Overview
