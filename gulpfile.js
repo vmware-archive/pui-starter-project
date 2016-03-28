@@ -20,7 +20,7 @@ gulp.task('build-js', function() {
           },
           {test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader')},
           {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
-          {test: /bootstrap/, loader: 'imports?jQuery=jquery'}
+          {test: /bootstrap.js/, loader: 'imports?jQuery=jquery'}
         ]
       },
       plugins: [
