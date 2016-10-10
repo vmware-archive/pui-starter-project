@@ -14,7 +14,7 @@ gulp.task('build-js', function() {
       module: {
         loaders: [
           {
-            test: [/\.svg(\?|$)/, /\.png(\?|$)/, /\.eot(\?|$)/, /\.ttf(\?|$)/, /\.woff2?(\?|$)/, /\.jpg?(\?|$)/],
+            test: [/\.png(\?|$)/, /\.eot(\?|$)/, /\.ttf(\?|$)/, /\.woff2?(\?|$)/, /\.jpg?(\?|$)/],
             include: /node_modules/,
             loader: 'url?name=[name].[ext]'
           },
